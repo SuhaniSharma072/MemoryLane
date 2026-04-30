@@ -1,86 +1,121 @@
+
+<!--add spotify playlist if needed-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MemoryLane</title>
-    <link rel="stylesheet" href="styles.css">
-     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet"/>
-
-    <h1>Memory Lane</h1>
-    
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MemoryLane</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body>
-     <header class="header-wrap">
- 
-    <div class="petal p1"></div>
-    <div class="petal p2"></div>
-    <div class="petal p3"></div>
-    <div class="petal p4"></div>
-    <div class="petal p5"></div>
-    <div class="petal p6"></div>
- 
 
-    <div class="sparkle s1"></div>
-    <div class="sparkle s2"></div>
-    <div class="sparkle s3"></div>
-    <div class="sparkle s4"></div>
- 
+<header class="header-wrap">
 
-    <div class="cloud-container">
-      <svg class="cloud-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 160" preserveAspectRatio="none">
-        <defs>
-          <linearGradient id="cloudGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%"   style="stop-color:#fff5fa; stop-opacity:1"/>
-            <stop offset="100%" style="stop-color:#fde8f4; stop-opacity:1"/>
-          </linearGradient>
-        </defs>
-       
-        <ellipse cx="260" cy="112" rx="220" ry="44" fill="url(#cloudGrad)" stroke="#ebadd4" stroke-width="1.5"/>
-        <circle  cx="110" cy="100" r="38"            fill="url(#cloudGrad)" stroke="#ebadd4" stroke-width="1.5"/>
-        <circle  cx="175" cy="80"  r="50"            fill="url(#cloudGrad)" stroke="#ebadd4" stroke-width="1.5"/>
-        <circle  cx="260" cy="68"  r="58"            fill="url(#cloudGrad)" stroke="#ebadd4" stroke-width="1.5"/>
-        <circle  cx="345" cy="80"  r="50"            fill="url(#cloudGrad)" stroke="#ebadd4" stroke-width="1.5"/>
-        <circle  cx="410" cy="100" r="38"            fill="url(#cloudGrad)" stroke="#ebadd4" stroke-width="1.5"/>
-   
-        <ellipse cx="260" cy="112" rx="218" ry="42"  fill="url(#cloudGrad)"/>
-        <circle  cx="110" cy="100" r="36"            fill="url(#cloudGrad)"/>
-        <circle  cx="175" cy="80"  r="48"            fill="url(#cloudGrad)"/>
-        <circle  cx="260" cy="68"  r="56"            fill="url(#cloudGrad)"/>
-        <circle  cx="345" cy="80"  r="48"            fill="url(#cloudGrad)"/>
-        <circle  cx="410" cy="100" r="36"            fill="url(#cloudGrad)"/>
-      </svg>
- 
-      <div class="cloud-inner">
-        <span class="bubbly-word word-memory" id="memory"></span>
-        <span class="bubbly-word word-lane"   id="lane"></span>
+<!--this is the cloud -->
+  <div class="cloud-container">
+    <svg class="cloud-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 160" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="cloudGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style="stop-color:#fff5fa; stop-opacity:1"/>
+          <stop offset="100%" style="stop-color:#fde8f4; stop-opacity:1"/>
+        </linearGradient>
+      </defs>
+      <ellipse cx="260" cy="112" rx="220" ry="44" fill="url(#cloudGrad)" stroke="#ebadd4" stroke-width="1.5"/>
+      <circle cx="110" cy="100" r="38" fill="url(#cloudGrad)" stroke="#ebadd4" stroke-width="1.5"/>
+      <circle cx="175" cy="80" r="50" fill="url(#cloudGrad)" stroke="#ebadd4" stroke-width="1.5"/>
+      <circle cx="260" cy="68" r="58" fill="url(#cloudGrad)" stroke="#ebadd4" stroke-width="1.5"/>
+      <circle cx="345" cy="80" r="50" fill="url(#cloudGrad)" stroke="#ebadd4" stroke-width="1.5"/>
+      <circle cx="410" cy="100" r="38" fill="url(#cloudGrad)" stroke="#ebadd4" stroke-width="1.5"/>
+      <ellipse cx="260" cy="112" rx="218" ry="42" fill="url(#cloudGrad)"/>
+      <circle cx="110" cy="100" r="36" fill="url(#cloudGrad)"/>
+      <circle cx="175" cy="80" r="48" fill="url(#cloudGrad)"/>
+      <circle cx="260" cy="68" r="56" fill="url(#cloudGrad)"/>
+      <circle cx="345" cy="80" r="48" fill="url(#cloudGrad)"/>
+      <circle cx="410" cy="100" r="36" fill="url(#cloudGrad)"/>
+    </svg>
+    <div class="cloud-inner">
+      <span class="bubbly-word" id="memory"></span>
+      <span class="bubbly-word" id="lane"></span>
+    </div>
+  </div>
+
+  
+<!--floral line under cloud-->
+  <div class="bottom-line">
+    <div class="bottom-seg"></div>
+    <span class="rose">✿</span>
+    <div class="bottom-seg"></div>
+  </div>
+</header>
+
+<div style="display:flex; justify-content:center; margin-bottom:10px;">
+  <button class="add-btn" onclick="openModal()">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+      <circle cx="12" cy="12" r="10"/>
+      <line x1="12" y1="8" x2="12" y2="16"/>
+      <line x1="8" y1="12" x2="16" y2="12"/>
+    </svg>
+    add a memory
+  </button>
+</div>
+
+
+<!--NOTES-->
+<div class="allnotes" id="allnotes">
+  <div class="empty-state" id="empty-state">✿ no memories yet : add your first hackathon above ✿</div>
+</div>
+
+<!-- ADD / EDIT MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div class="modal-title" id="modal-title">✿ new memory ✿</div>
+
+    <label>hackathon name *</label>
+    <input type="text" id="f-name" placeholder="e.g. Parthenon">
+
+    <label>location</label>
+    <input type="text" id="f-location" placeholder="e.g. NYC">
+
+    <div class="modal-row">
+      <div>
+        <label>start date</label>
+        <input type="date" id="f-date-start">
+      </div>
+      <div>
+        <label>end date</label>
+        <input type="date" id="f-date-end">
       </div>
     </div>
- 
-    <p class="tagline">where every moment lives forever</p>
- 
-    <div class="bottom-line">
-      <div class="bottom-seg"></div>
-      <span class="rose">✿</span>
-      <div class="bottom-seg"></div>
-    </div>
- 
-  </header>
- 
-  <script src="script.js"></script>
-    <div class="allnotes">
-    <div class="noteone">
-        <h1>Parthenon</h1>
-    </div>
-    
-    <div class="notetwo">
-        <h1>Sleepover</h1>
-    </div>
+
+    <label>description / memories</label>
+    <textarea id="f-desc" placeholder="what happened, what you built, how it felt..."></textarea>
+
+    <label>github repo url</label>
+    <input type="url" id="f-github" placeholder="https://github.com/...">
+
+    <label>project / demo url</label>
+    <input type="url" id="f-project" placeholder="https://devpost.com/...">
+
+    <label>photo</label>
+    <input type="file" id="f-photo" accept="image/*" onchange="previewPhoto(this)">
+    <img id="photo-preview" class="photo-preview" alt="preview">
 
 
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeModal()">cancel</button>
+      <button class="btn-save" id="btn-save" onclick="saveMemory()">pin this memory ✿</button>
     </div>
+  </div>
+</div>
 
+
+
+
+<script src="script.js"></script>
 </body>
 </html>
 
